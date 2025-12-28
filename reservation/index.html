@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="loginSection">
+        <h2>Login</h2>
+        <input type="text" id="loginId" placeholder="Enter Login ID">
+        <input type="password" id="loginPassword" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container hidden" id="reservationSection">
+        <h2>Reservation Form</h2>
+
+        <input type="text" id="passengerName" placeholder="Passenger Name">
+        <input type="number" id="age" placeholder="Age">
+        <input type="text" id="trainNo" placeholder="Train Number" oninput="autoFillTrainName()">
+        <input type="text" id="trainName" placeholder="Train Name" readonly>
+        <select id="classType">
+            <option value="">Select Class</option>
+            <option>AC</option>
+            <option>Sleeper</option>
+            <option>General</option>
+        </select>
+        <input type="date" id="journeyDate">
+        <input type="text" id="from" placeholder="From">
+        <input type="text" id="to" placeholder="To">
+        <button onclick="reserveTicket()">Insert</button>
+    </div>
+
+    <div class="container hidden" id="cancelSection">
+        <h2>Cancellation Form</h2>
+        <input type="text" id="cancelPNR" placeholder="Enter PNR Number">
+        <button onclick="searchPNR()">Search</button>
+
+        <div id="pnrDetails" class="hidden"></div>
+
+        <button id="confirmCancelBtn" class="hidden" onclick="cancelTicket()">OK (Confirm Cancellation)</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
